@@ -1,0 +1,4 @@
+services:
+  whalibmob-bridge:
+    network_mode: host
+    networks: []

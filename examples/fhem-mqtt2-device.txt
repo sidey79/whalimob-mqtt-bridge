@@ -1,0 +1,6 @@
+define whalibmob_bridge MQTT2_DEVICE whalibmob_bridge
+attr whalibmob_bridge readingList whalibmob/event/status:.* status\
+  whalibmob/event/message:.* message\
+  whalibmob/event/error:.* error
+attr whalibmob_bridge setList sendText:textField { my $payload = qq({"requestId":"fhem-}.time().qq(","to":"$EVTPART1","payload":{"text":"$EVTPART2"}}); fhem("set mqtt publish whalibmob/cmd/send/text $payload") }
+attr whalibmob_bridge room WhatsApp
