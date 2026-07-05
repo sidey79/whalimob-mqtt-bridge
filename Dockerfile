@@ -1,4 +1,4 @@
-FROM node:22-bookworm-slim AS build
+FROM node:24-bookworm-slim@sha256:b31e7a42fdf8b8aa5f5ed477c72d694301273f1069c5a2f71d53c6482e99a2fc AS build
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ RUN npm install
 COPY src ./src
 RUN npm run build
 
-FROM node:22-bookworm-slim AS runtime
+FROM node:24-bookworm-slim@sha256:b31e7a42fdf8b8aa5f5ed477c72d694301273f1069c5a2f71d53c6482e99a2fc AS runtime
 
 ENV NODE_ENV=production \
     WA_SESSION_DIR=/data/session \
