@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "mqtt": "^5.10.4",
-    "pino": "^9.6.0"
+    "pino": "^10.0.0"
   },
   "peerDependencies": {
     "whalibmob": "*"
